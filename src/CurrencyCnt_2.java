@@ -29,9 +29,9 @@ public class CurrencyCnt_2 {
         System.out.printf("500원권 %d개 나머지 :%d개\n" , refund/curr500, refund%curr500);
         refund = refund % 500;
         System.out.printf("100원권 %d개 나머지 :%d개\n" , refund/curr100, refund%curr100);
-        refund = refund % 50;
+        refund = refund % 1000;
         System.out.printf("50원권 %d개 나머지 :%d개\n" , refund/curr50, refund%curr50);
-        refund = refund % 10;
+        refund = refund % 50;
         System.out.printf("10원권 %d개 나머지 :%d개\n" , refund/curr10, refund%curr10);
 
     }
