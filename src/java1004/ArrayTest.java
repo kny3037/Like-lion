@@ -1,3 +1,5 @@
+package java1004;
+
 public class ArrayTest {
     public static void main(String[] args) {
         System.out.println("hello");  //alt + shift + f10 눌러서 실행
