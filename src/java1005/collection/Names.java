@@ -5,7 +5,40 @@ import java.util.List;
 
 public class Names {
     private List<String>students = new ArrayList<>();
+    private List<Student> studentObj = new ArrayList<>();
 
+    public List<Student> getStudentObjs() {
+        this.studentObj.add(new Student(1, "권하준", "https://github.com/dongyeon-0822/java-project-exercise"));
+        this.studentObj.add(new Student(1, "조성윤", "https://github.com/kang-subin/Java"));
+        this.studentObj.add(new Student(3, "안예은", "https://github.com/KoKwanwun/LikeLion.git"));
+        this.studentObj.add(new Student(1, "남우빈", "https://github.com/lcomment/Algorithm_Solution--Java/tree/main/LikeLion"));
+        this.studentObj.add(new Student(2, "최경민", "https://github.com/cmkxak/likelion-java-course"));
+        this.studentObj.add(new Student(3, "안준휘", "https://github.com/rnrudejr9/CodeLion-git-test"));
+        this.studentObj.add(new Student(2, "하채민", "https://github.com/Qkite/java-excercise-01/tree/main/src"));
+        this.studentObj.add(new Student(2, "허도한", "https://github.com/lucyoz/java-exercise"));
+        this.studentObj.add(new Student(2, "배태훈", "https://github.com/percyfrank/like-lion"));
+        this.studentObj.add(new Student(2, "정해성", "https://github.com/KimGunWoo9595/Lion_Java_Pratice"));
+        this.studentObj.add(new Student(2, "하찬희", "https://github.com/KimKiheon/LikeLion"));
+        this.studentObj.add(new Student(3, "박도아", "https://github.com/kny3037/java-exercise"));
+        this.studentObj.add(new Student(2, "유경준", "https://github.com/KimDohyoun79/remote_Lion.git"));
+        this.studentObj.add(new Student(1, "고다니엘", "https://github.com/kimkimj/create-repo1"));
+        this.studentObj.add(new Student(1, "하이안", "https://github.com/mingry2/intellij-git-exercise1"));
+        this.studentObj.add(new Student(1, "고유호", "https://github.com/Min-ji99/intelliJ-git-exercies"));
+        this.studentObj.add(new Student(2, "전민찬", "https://github.com/sangho527/Like_Lion_Java"));
+        this.studentObj.add(new Student(2, "배강", "https://github.com/ReadnThink/Like_lion.git"));
+        this.studentObj.add(new Student(3, "유서이", "https://github.com/yejinstar/git_exercise_push"));
+        this.studentObj.add(new Student(3, "황도빈", "https://github.com/dmdwns2/java-git-init"));
+        this.studentObj.add(new Student(2, "강규진", "https://github.com/Geuun/Java_Algorithm"));
+        this.studentObj.add(new Student(1, "임예린", "https://github.com/O-sulloc/java-exercise-1005"));
+        this.studentObj.add(new Student(2, "양예온", "https://github.com/chordpli/likelion_course"));
+        this.studentObj.add(new Student(2, "곽윤재", "https://github.com/strongcookdas/java.git"));
+        this.studentObj.add(new Student(1, "한단", "https://github.com/Kim-Ji-Yeong/Java-exercise"));
+        this.studentObj.add(new Student(2, "박강현", "https://github.com/k0605ja/git-test"));
+        this.studentObj.add(new Student(3, "노다율", "https://github.com/menuhwang/LikeLion"));
+        this.studentObj.add(new Student(1, "장우솔", "https://github.com/cvivis/git_practice2022/tree/main"));
+        this.studentObj.add(new Student(3, "황하준", "https://github.com/lay423/java-project"));
+        return this.studentObj;
+    }
     public List<String> names(){
         this.students.add("권하준");
         this.students.add("조성윤");
