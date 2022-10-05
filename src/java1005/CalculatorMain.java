@@ -2,11 +2,11 @@ package java1005;
 
 public class CalculatorMain {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(10,5);
 
-        calculator.plus(3,5);
-        calculator.minus(5,2);
-        calculator.multiple(4,8);
-        calculator.divide(6,3);
+        calculator.plus();
+        calculator.minus();
+        calculator.multiple();
+        calculator.divide();
     }
 }
