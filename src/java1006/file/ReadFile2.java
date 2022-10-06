@@ -18,3 +18,13 @@ public class ReadFile2 {
 
     }
 }
+/*
+실행 결과
+.\.git
+.\.gitignore
+.\.idea
+.\a_file.txt
+.\java-project-push-exercise.iml
+.\out
+.\src
+* */
