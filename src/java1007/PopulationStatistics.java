@@ -4,9 +4,8 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.rmi.RemoteException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class PopulationStatistics {
     //코드 메소드로 분리
@@ -37,6 +36,18 @@ public class PopulationStatistics {
         }
         reader.close();
         return pml;
+    }
+
+    public void readAllLine(String filename)throws IOException{
+        List<String> lines = Files.readAllLines(Paths.get(filename), StandardCharsets.UTF_8);
+        List<PopulationMove> pms = lines.parallelStream()
+                .map(item ->{
+                    String[] splittedLine = item.split(",");
+                    return new PopulationMove(splittedLine[0], splittedLine[6]);
+                }).collect(Collectors.toList());
+        for (PopulationMove pm : pms){
+            System.out.println(pm.getFromSido());
+        }
     }
 
     public PopulationMove parse(String data){
@@ -89,6 +100,25 @@ public class PopulationStatistics {
         return populationMove.getFromSido() + "," + populationMove.getToSido()+"\n";
     }
 
+  /*  public Set<Integer> printSidoCd(List<PopulationMove> populationMoves){
+
+        Set<Integer> intSet = new HashSet<>();
+        //for(PopulationMove pm : p)
+    }*/
+
+    public Map<String, Integer> getMoveCntMap(List<PopulationMove>pml){
+        Map<String,Integer>moveCntMap = new HashMap<>();
+        for (PopulationMove pm : pml) {
+            String key = pm.getFromSidoKorean() + "," + pm.getToSido();
+            if(moveCntMap.get(key)==null){
+                moveCntMap.put(key,1);
+            }
+            moveCntMap.put(key, moveCntMap.get(key)+1);
+        }
+        return moveCntMap;
+    }
+
+
     public static void main(String[] args) throws IOException {
         String address = "./from_to.txt";
 
@@ -109,7 +139,18 @@ public class PopulationStatistics {
 
 //        populationStatistics.write(strings,"./from_to.txt");
 
+        Set<Integer> sidoCodes = new HashSet<>();
+        for (PopulationMove pm : pml) {
+            sidoCodes.add(pm.getFromSido());
+            sidoCodes.add(pm.getToSido());
+        }
+       // System.out.println(sidoCodes);
 
+
+        Map<String, Integer> map = populationStatistics.getMoveCntMap(pml);
+        for (String key : map.keySet()){
+            System.out.println(key + map.get(key));
+        }
 
 
     }
