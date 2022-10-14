@@ -20,7 +20,7 @@ public class InsertionSort03 {
     }
 
     public static void main(String[] args) {
-        //5에서 출발!
+        //5에서 출발
         int[] arr = {8, 5, 6, 2, 4};
 
         InsertionSort03 is = new InsertionSort03();
